@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#090806">
+<title>DPI PHECHE 👑</title>
+<style>
+:root{--gold:#f3c95c;--gold2:#9b7028;--ink:#090806;--panel:#15120d;--muted:#b9ad91}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 0%,#38280e 0,#15110a 35%,#080807 75%);color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding:24px 14px calc(34px + env(safe-area-inset-bottom))}
+.app{width:min(100%,680px);margin:0 auto;border:1px solid #8e6b2b;border-radius:28px;padding:clamp(20px,5vw,38px);background:linear-gradient(155deg,rgba(29,23,13,.97),rgba(8,8,7,.98));box-shadow:0 0 55px #d59b2420,inset 0 0 28px #d59b2408;overflow:hidden}
+.brand{text-align:center;padding:8px 0 22px}
+.crown{font-size:56px;line-height:1.25;filter:drop-shadow(0 0 14px #f5c94c99)}
+h1{font-size:clamp(30px,7vw,44px);letter-spacing:3px;margin:6px 0;color:#ffe39a;text-shadow:0 0 20px #e7b83d44}
+.kicker{font-size:11px;letter-spacing:4px;color:#c9b887}
+.edition{display:inline-block;margin-top:18px;border:1px solid #806027;border-radius:30px;padding:9px 16px;color:#e9c66c;font-size:11px;letter-spacing:2px}
+.hero{height:clamp(155px,35vw,235px);border:1px solid #9d7836;border-radius:22px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 45%,#70501d 0,#2c210f 27%,#100e0a 68%,#080807 100%);box-shadow:inset 0 0 40px #e6b64418,0 0 22px #d6a73a12}
+.hero:before,.hero:after{content:"";position:absolute;border:1px solid #c99a3e55;border-radius:50%;width:210px;height:210px;transform:rotate(-25deg) scaleX(1.6)}
+.hero:after{width:270px;height:270px;transform:rotate(25deg) scaleX(1.5)}
+.hero-inner{position:relative;z-index:1;text-align:center}
+.hero-crown{font-size:58px;filter:drop-shadow(0 0 14px #f5c94caa)}
+.hero-title{font-weight:900;letter-spacing:3px;color:#f6d77f;font-size:clamp(17px,4vw,24px);margin-top:7px}
+.hero-sub{font-size:10px;letter-spacing:3px;color:#d2bd87;margin-top:8px}
+.progress{height:3px;background:#382b16;border-radius:8px;margin:26px 0 30px;overflow:hidden}
+.progress span{display:block;height:100%;width:36%;background:linear-gradient(90deg,#8d6423,#ffe28a,#b17c24);border-radius:8px}
+h2{font-size:23px;margin:0 0 7px}
+.desc{color:var(--muted);font-size:14px;margin:0 0 22px;line-height:1.5}
+.option{width:100%;display:flex;align-items:center;justify-content:space-between;text-align:left;padding:18px 17px;margin:12px 0;border:1px solid #594522;border-radius:17px;background:linear-gradient(110deg,#211b11,#11100d);color:#fff;cursor:pointer;min-height:68px}
+.option strong{font-size:15px;letter-spacing:.4px}
+.option small{display:block;color:#b9ad91;font-size:12px;margin-top:5px}
+.radio{width:21px;height:21px;border:1.5px solid #b58b3c;border-radius:50%;flex:none;margin-left:12px}
+.option.selected{border-color:#f3c95c;box-shadow:0 0 0 1px #f3c95c55,0 0 20px #e9b83b20;background:linear-gradient(110deg,#392a12,#17130c)}
+.option.selected .radio{background:#f3c95c;box-shadow:inset 0 0 0 5px #17120a}
+.primary,.secondary{width:100%;border-radius:16px;padding:17px 14px;font-weight:800;letter-spacing:1.2px;font-size:14px;cursor:pointer}
+.primary{border:1px solid #f6d77f;color:#211707;background:linear-gradient(100deg,#a87927,#ffe08a,#b98730);box-shadow:0 7px 24px #d7a33b25;margin-top:14px}
+.secondary{border:1px solid #5c4a2a;color:#e8d39e;background:#19150f;margin-top:12px}
+button:disabled{opacity:.5;cursor:wait}
+.notice{margin-top:20px;border:1px solid #5e4822;background:#17130c;border-radius:14px;padding:13px;color:#c9bd9e;font-size:12px;line-height:1.55}
+.notice b{color:#f0d28a}
+.status{display:none;text-align:center;padding:24px 8px}
+.spinner{width:42px;height:42px;border:3px solid #59451f;border-top-color:#ffdb78;border-radius:50%;margin:0 auto 18px;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.status h2{color:#f5d783}
+.status p{color:#c9bd9e;line-height:1.6}
+.footer{text-align:center;color:#e7c66e;font-size:11px;font-weight:800;letter-spacing:2.5px;margin-top:28px}
+@media(min-width:700px){body{padding-top:42px}.app{padding:40px 44px}}
+</style>
+</head>
+<body>
+<main class="app">
+  <header class="brand">
+    <div class="crown">👑</div>
+    <h1>DPI PHECHE</h1>
+    <div class="kicker">ROYAL GAMING EXPERIENCE</div>
+    <div class="edition">● PREMIUM EDITION · iOS</div>
+  </header>
+
+  <section class="hero" aria-label="DPI PHECHE royal gaming banner">
+    <div class="hero-inner">
+      <div class="hero-crown">👑</div>
+      <div class="hero-title">DPI PHECHE</div>
+      <div class="hero-sub">AIM • CONTROL • EXPERIENCE</div>
+    </div>
+  </section>
+
+  <div class="progress"><span></span></div>
+
+  <section id="gameStep">
+    <h2>Chọn phiên bản game</h2>
+    <p class="desc">Hãy chọn phiên bản Free Fire bạn đang sử dụng.</p>
+    <button class="option" data-game="FREE FIRE MAX" onclick="chooseGame(this)">
+      <span><strong>FREE FIRE MAX</strong><small>Đồ họa nâng cao · Phiên bản MAX</small></span><i class="radio"></i>
+    </button>
+    <button class="option" data-game="FREE FIRE THƯỜNG" onclick="chooseGame(this)">
+      <span><strong>FREE FIRE THƯỜNG</strong><small>Phiên bản tiêu chuẩn</small></span><i class="radio"></i>
+    </button>
+    <button class="primary" onclick="nextStep()">TIẾP TỤC</button>
+  </section>
+
+  <section id="modeStep" hidden>
+    <h2>Chọn chế độ trải nghiệm</h2>
+    <p class="desc">Chọn mức mô phỏng theo cảm giác vuốt bạn muốn thử.</p>
+    <button class="option" data-mode="50% HS" onclick="chooseMode(this)">
+      <span><strong>50% HS</strong><small>Vuốt nhẹ nhàng · Làm quen</small></span><i class="radio"></i>
+    </button>
+    <button class="option" data-mode="100% HS" onclick="chooseMode(this)">
+      <span><strong>100% HS</strong><small>Vuốt nhanh · Cảm giác nhạy hơn</small></span><i class="radio"></i>
+    </button>
+    <button class="primary" onclick="confirmChoice()">XÁC NHẬN LỰA CHỌN</button>
+    <button class="secondary" onclick="backStep()">QUAY LẠI</button>
+  </section>
+
+  <section class="status" id="loadingStep">
+    <div class="spinner"></div>
+    <h2>ĐANG CHUẨN BỊ...</h2>
+    <p>Đang ghi nhận lựa chọn của bạn.<br>Vui lòng đợi một chút.</p>
+  </section>
+
+  <section class="status" id="doneStep">
+    <div class="crown">👑</div>
+    <h2>ĐÃ GHI NHẬN LỰA CHỌN</h2>
+    <p id="result"></p>
+    <button class="primary" onclick="restart()">CHỌN LẠI</button>
+  </section>
+
+  <div class="notice"><b>Lưu ý:</b> Đây là trang Web Clip để lưu lựa chọn. Trang web và hồ sơ iOS không thể tự thay đổi DPI, độ nhạy, cảm ứng hoặc tỷ lệ Headshot trong Free Fire. Bạn cần tự điều chỉnh thiết lập trong game.</div>
+  <footer class="footer">✦ MADE BY THICH AN CHE ✦</footer>
+</main>
+<script>
+let game="",mode="";
+function chooseGame(btn){game=btn.dataset.game;document.querySelectorAll('#gameStep .option').forEach(x=>x.classList.toggle('selected',x===btn))}
+function chooseMode(btn){mode=btn.dataset.mode;document.querySelectorAll('#modeStep .option').forEach(x=>x.classList.toggle('selected',x===btn))}
+function nextStep(){if(!game){alert('Vui lòng chọn phiên bản game.');return}document.getElementById('gameStep').hidden=true;document.getElementById('modeStep').hidden=false}
+function backStep(){document.getElementById('modeStep').hidden=true;document.getElementById('gameStep').hidden=false}
+function confirmChoice(){if(!mode){alert('Vui lòng chọn chế độ.');return}document.getElementById('modeStep').hidden=true;document.getElementById('loadingStep').style.display='block';setTimeout(()=>{document.getElementById('loadingStep').style.display='none';document.getElementById('doneStep').style.display='block';document.getElementById('result').textContent='Phiên bản: '+game+' · Chế độ: '+mode+'. Lựa chọn đã được ghi nhận trên trang.'},2000)}
+function restart(){game="";mode="";document.querySelectorAll('.option').forEach(x=>x.classList.remove('selected'));document.getElementById('doneStep').style.display='none';document.getElementById('gameStep').hidden=false}
+</script>
+</body>
+</html>
