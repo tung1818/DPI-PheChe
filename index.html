@@ -1,1 +1,130 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080807">
+<title>DPI PHECHE 👑</title>
+<style>
+:root{--gold:#f4d477;--gold2:#c18b22;--gold3:#fff0b0;--ink:#080807;--muted:#b9b09b}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:#fff;background:radial-gradient(ellipse at 50% -10%,#62460f 0,#241a08 20%,#10100e 48%,#050505 100%);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;display:flex;justify-content:center;align-items:center;padding:22px 16px}
+.app{width:min(100%,540px);position:relative;overflow:hidden;border:1px solid #9b772b;border-radius:30px;padding:28px 22px 22px;background:linear-gradient(145deg,#1c1a14ed,#0b0b0af5 52%,#11100c);box-shadow:0 25px 80px #000d,0 0 35px #d6a52b20,inset 0 1px #fff2}
+.app:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 15%,#f5d77a08 45%,transparent 70%)}
+.header{text-align:center;position:relative}.crown{font-size:52px;line-height:1.2;filter:drop-shadow(0 0 9px #e8b83e) drop-shadow(0 0 24px #b37c1c);animation:float 3s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-5px)}}
+h1{margin:8px 0 3px;font-size:clamp(27px,7vw,34px);letter-spacing:3px;font-weight:900;color:var(--gold3);text-shadow:0 0 20px #d6a52b55}
+.subtitle{font-size:10px;letter-spacing:3px;color:#c9b77f}
+.pill{display:inline-flex;align-items:center;gap:7px;margin-top:14px;padding:7px 12px;border:1px solid #70551f;border-radius:30px;background:#1b170c;color:#e7c76d;font-size:10px;letter-spacing:1.5px}
+.pill:before{content:"";width:6px;height:6px;border-radius:50%;background:#eac85e;box-shadow:0 0 9px #f5cf55}
+.progress{height:3px;background:#302716;border-radius:8px;margin:23px 0 25px;overflow:hidden}
+.bar{height:100%;width:33%;background:linear-gradient(90deg,#9b6c15,#fff0a8,#c18b22);box-shadow:0 0 12px #eac45b;transition:width .4s}
+h2{font-size:21px;margin:0 0 7px;letter-spacing:.2px}.hint{font-size:13px;color:var(--muted);line-height:1.55;margin:0 0 20px}
+.choices{display:grid;gap:12px}
+.choice{width:100%;display:flex;align-items:center;justify-content:space-between;text-align:left;padding:17px 16px;border-radius:17px;border:1px solid #4c3c1c;background:linear-gradient(120deg,#201e18,#11110f);color:#fff;cursor:pointer;transition:.2s;box-shadow:inset 0 1px #fff08}
+.choice:active{transform:scale(.985)}
+.choice.active{border-color:#e7c15b;background:linear-gradient(110deg,#3a2b0e,#1c1911);box-shadow:inset 0 0 0 1px #a77d29,0 0 22px #d6a52b20}
+.name{font-size:15px;font-weight:800;letter-spacing:.5px}.desc{font-size:11px;color:#b7ad96;margin-top:5px;font-weight:400}
+.radio{width:19px;height:19px;border:1px solid #8d702e;border-radius:50%;flex:none;margin-left:12px;display:grid;place-items:center}
+.active .radio{background:#e9c65d;box-shadow:inset 0 0 0 5px #211a0b,0 0 12px #e9c65d}
+.actions{display:flex;gap:10px;margin-top:22px}
+button:disabled{opacity:.35;cursor:not-allowed}
+.btn{border:0;border-radius:14px;padding:16px 13px;font-size:12px;font-weight:900;letter-spacing:1px;cursor:pointer;flex:1;transition:.2s}
+.primary{color:#211805;background:linear-gradient(135deg,#fff0ae,#e5bd55 48%,#a97618);box-shadow:0 7px 22px #b8860b35,inset 0 1px #fff9}
+.secondary{color:#e9dfc8;background:linear-gradient(120deg,#25231e,#141412);border:1px solid #51462d}
+.btn:active{transform:translateY(1px) scale(.99)}
+.notice{margin-top:22px;padding:13px 14px;border-radius:14px;background:#17140d;border:1px solid #59451c;color:#c9bd9d;font-size:11px;line-height:1.6}
+.notice b{color:#e8ca70}
+.hidden{display:none!important}
+.loader-wrap{min-height:255px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.spinner{width:74px;height:74px;border-radius:50%;border:4px solid #493918;border-top-color:#ffe9a0;border-right-color:#c18b22;box-shadow:0 0 24px #d9aa3b33;animation:spin .85s linear infinite;margin-bottom:24px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-title{font-weight:900;letter-spacing:2px;color:#f3d77e;font-size:14px}
+.loading-sub{color:#b8ad93;font-size:12px;margin-top:9px}
+.dots:after{content:"";animation:dots 1.2s steps(4,end) infinite}
+@keyframes dots{0%{content:""}25%{content:"."}50%{content:".."}75%,100%{content:"..."}}
+.result{border:1px solid #806126;border-radius:18px;padding:18px;background:linear-gradient(145deg,#211b0e,#11110e);line-height:1.9;margin-top:15px}
+.result strong{color:#f0d47c}
+.success{font-size:12px;color:#d6c9a6;margin-top:12px}
+@media(min-width:600px){.app{padding:34px 30px 25px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="app">
+<header class="header">
+<div class="crown">👑</div>
+<h1>DPI PHECHE</h1>
+<div class="subtitle">ROYAL GAMING EXPERIENCE</div>
+<div class="pill">PREMIUM EDITION · iOS</div>
+</header>
+<div class="progress"><div class="bar" id="bar"></div></div>
 
+<section id="step1">
+<h2>Chọn phiên bản game</h2>
+<p class="hint">Hãy chọn phiên bản Free Fire bạn đang sử dụng.</p>
+<div class="choices">
+<button class="choice" data-group="game" data-value="FREE FIRE MAX"><span><span class="name">FREE FIRE MAX</span><span class="desc">Đồ họa nâng cao · Phiên bản MAX</span></span><i class="radio"></i></button>
+<button class="choice" data-group="game" data-value="FREE FIRE THƯỜNG"><span><span class="name">FREE FIRE THƯỜNG</span><span class="desc">Phiên bản tiêu chuẩn</span></span><i class="radio"></i></button>
+</div>
+<div class="actions"><button class="btn primary" id="next" disabled>TIẾP TỤC　→</button></div>
+</section>
+
+<section id="step2" class="hidden">
+<h2>Chọn chế độ trải nghiệm</h2>
+<p class="hint">Chọn kiểu cảm giác vuốt bạn muốn tham khảo.</p>
+<div class="choices">
+<button class="choice" data-group="mode" data-value="50% HS"><span><span class="name">50% HS</span><span class="desc">Gợi ý trải nghiệm vuốt nhẹ nhàng</span></span><i class="radio"></i></button>
+<button class="choice" data-group="mode" data-value="100% HS"><span><span class="name">100% HS</span><span class="desc">Gợi ý trải nghiệm vuốt nhanh, nhạy hơn</span></span><i class="radio"></i></button>
+</div>
+<div class="actions"><button class="btn secondary" id="back">← QUAY LẠI</button><button class="btn primary" id="confirm" disabled>XÁC NHẬN</button></div>
+</section>
+
+<section id="loading" class="hidden">
+<div class="loader-wrap">
+<div class="spinner"></div>
+<div class="loading-title">ĐANG XỬ LÝ LỰA CHỌN<span class="dots"></span></div>
+<div class="loading-sub">Vui lòng chờ trong giây lát...</div>
+</div>
+</section>
+
+<section id="step3" class="hidden">
+<h2>Hoàn tất lựa chọn 👑</h2>
+<p class="hint">Thông tin lựa chọn của bạn đã được ghi nhận trên giao diện.</p>
+<div class="result" id="result"></div>
+<p class="success">Bạn có thể vào cài đặt trong game để tự tinh chỉnh độ nhạy và thử nghiệm trong khu luyện tập.</p>
+<div class="actions"><button class="btn secondary" id="restart">↻ CHỌN LẠI</button></div>
+</section>
+
+<div class="notice"><b>Thông tin minh bạch:</b> DPI PHECHE👑 là giao diện Web Clip hỗ trợ lưu lựa chọn tham khảo. Hiệu ứng chờ chỉ là hoạt ảnh giao diện; website và hồ sơ iOS không thay đổi DPI thật, độ nhạy, cảm ứng hoặc tỷ lệ Headshot trong Free Fire.</div>
+</main>
+<script>
+const state={game:"",mode:""};
+const $=id=>document.getElementById(id);
+function show(id,width){["step1","step2","loading","step3"].forEach(x=>$(x).classList.toggle("hidden",x!==id));$("bar").style.width=width;}
+function choose(group,value){
+ state[group]=value;
+ document.querySelectorAll(`[data-group="${group}"]`).forEach(el=>el.classList.toggle("active",el.dataset.value===value));
+ if(group==="game")$("next").disabled=false;
+ if(group==="mode")$("confirm").disabled=false;
+}
+document.querySelectorAll(".choice").forEach(el=>el.addEventListener("click",()=>choose(el.dataset.group,el.dataset.value)));
+$("next").onclick=()=>show("step2","66%");
+$("back").onclick=()=>show("step1","33%");
+$("confirm").onclick=()=>{
+ $("confirm").disabled=true;
+ show("loading","82%");
+ window.setTimeout(()=>{
+  $("result").innerHTML="<strong>Phiên bản game:</strong> "+state.game+"<br><strong>Chế độ đã chọn:</strong> "+state.mode+"<br><br><strong>Trạng thái:</strong> Đã ghi nhận lựa chọn tham khảo.";
+  show("step3","100%");
+ },2000);
+};
+$("restart").onclick=()=>{
+ state.game="";state.mode="";
+ document.querySelectorAll(".choice").forEach(el=>el.classList.remove("active"));
+ $("next").disabled=true;$("confirm").disabled=true;
+ show("step1","33%");
+};
+</script>
+</body>
+</html>
